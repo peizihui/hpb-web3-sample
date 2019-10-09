@@ -9,6 +9,7 @@ import io.hpb.web3.protocol.admin.Admin;
 import io.hpb.web3.protocol.core.DefaultBlockParameterName;
 import io.hpb.web3.protocol.core.methods.response.HpbGetBalance;
 import io.hpb.web3.protocol.http.HttpService;
+import io.hpb.web3.tuples.generated.Tuple2;
 import io.hpb.web3.tx.ChainId;
 import io.hpb.web3.tx.RawTransactionManager;
 import io.hpb.web3.tx.gas.ContractGasProvider;
@@ -38,12 +39,23 @@ public class ContractRun {
 //          System.out.println("contract.isValid = [" + contract.isValid()  + "]");
 //            System.out.println("erc721.isValid = [" + erc721.isValid()  + "]");
 
-            RedPacketToken redPacketToken = RedPacketToken.load("0xba29fa851805767609c25b7a032101cef1c2258b",web3,credentials,Convert.toWei("18", Convert.Unit.GWEI).toBigInteger(),BigInteger.valueOf(100000000));
+        /*    RedPacketToken redPacketToken = RedPacketToken.load("0xba29fa851805767609c25b7a032101cef1c2258b",web3,credentials,Convert.toWei("18", Convert.Unit.GWEI).toBigInteger(),BigInteger.valueOf(100000000));
             System.out.println("   redPacketToken.getOwner().sendAsync().get(2,TimeUnit.MINUTES).getValue() = [" +    redPacketToken.getOwner().sendAsync().get(2,TimeUnit.MINUTES).getValue() + "]");
             System.out.println("   redPacketToken.getContractAddress() = [" +     redPacketToken.getContractAddress() + "]");
 
-            System.out.println("   redPacketToken.getContractAddress() = [" +     redPacketToken.getContractBinary() + "]");
+            System.out.println("   redPacketToken.getContractAddress() = [" +     redPacketToken.getContractBinary() + "]");*/
 
+            HpbContractProxy hpbContractProxy = HpbContractProxy.load("0xdcdf1ac0b9f1a8ac4cbf03beb864cfcee6e92f18",web3,credentials,Convert.toWei("18", Convert.Unit.GWEI).toBigInteger(),BigInteger.valueOf(100000000));;
+            String nodeBallotAddrInService = hpbContractProxy.nodeBallotAddrInService().sendAsync().get(2, TimeUnit.MINUTES);
+
+            System.out.println("nodeBallotAddrInService = [" + nodeBallotAddrInService + "]");
+            // hpbNodesAddress;
+            String hpbNodesAddress =  hpbContractProxy.hpbNodesAddress().sendAsync().get(2,TimeUnit.MINUTES);
+            System.out.println("hpbNodesAddress = [" + hpbNodesAddress + "]");
+
+            Tuple2<String, BigInteger> stringBigIntegerTuple2 = hpbContractProxy.getLastestBallotAddrAndIndex().sendAsync().get(2, TimeUnit.MINUTES);
+            System.out.println("Value1 [" + stringBigIntegerTuple2.getValue1() + "]");
+            System.out.println("Value2 = [" + stringBigIntegerTuple2.getValue2() + "]");
 
         } catch (Exception e) {
             e.printStackTrace();
