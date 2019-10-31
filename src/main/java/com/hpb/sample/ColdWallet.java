@@ -65,7 +65,6 @@ public class ColdWallet {
 //			decryptWallet(keystore, "11111111");
             getBalance("0xdbc3f6a340eb8d065c6ccb06437a34d984d61134");
 			testTransaction();
-
 //			testTokenTransaction();
 		} catch (Exception e) {
 			e.printStackTrace();

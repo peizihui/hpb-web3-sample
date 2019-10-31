@@ -19,8 +19,10 @@ public class DecodeMessage {
 	 */
 	public static void main(String[] args) {
 		String signedData = "0xf8ac8201518506fc23ac00830493e094fda023cea60a9f421d74ac49f9a015880a77dd7280b844a9059cbb000000000000000000000000b5dbd2e4093a501f1d1e645f04cef5815a1581d7000000000000000000000000000000000000000000000004c53ecdc18a6000001ca03d710f3c5aabde2733938c44c0b1448f96e760c030205562f59889557397faa4a007110abbcfa343381a2f713d6339d3fa751200f82cc2f06a4d1967b4eaf61d50";
-		decodeMessage(signedData);
-		decodeMessageV340(signedData);
+		signedData = "ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+		//eventSignature=ddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef, eventArguments=00000000000000000000000000000000000000000000000000000000000186f6
+		    decodeMessage(signedData);
+		//  decodeMessageV340(signedData);
 	}
 
 	private static void decodeMessage(String signedData) {
@@ -45,6 +47,14 @@ public class DecodeMessage {
 					Numeric.toBytesPadded(Numeric.toBigInt(r.getBytes()), 32),
 					Numeric.toBytesPadded(Numeric.toBigInt(s.getBytes()), 32));
 			BigInteger pubKey = Sign.signedMessageToKey(TransactionEncoder.encode(rawTransaction), signatureData);
+
+
+			System.out.println("nonce = [" + nonce + "]");
+			System.out.println("gasPrice = [" + gasPrice + "]");
+			System.out.println("gasLimit = [" + gasLimit + "]");
+			System.out.println("to = [" + to + "]");
+			System.out.println("value = [" + value + "]");
+
 			System.out.println("publicKey " + pubKey.toString(16));
 			String address = Numeric.prependHexPrefix(Keys.getAddress(pubKey));
 			System.out.println("address " + address);

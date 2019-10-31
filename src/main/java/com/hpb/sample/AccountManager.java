@@ -19,8 +19,8 @@ public class AccountManager {
 
 	public static void main(String[] args) {
 		admin = Admin.build(new HttpService(Environment.RPC_URL));
-		createNewAccount();
-		getAccountList();
+		// createNewAccount();// 0x9af766b27f1f67afb2131cafa5b18ed7414672a5
+		// getAccountList();
 		unlockAccount();
 
 //		admin.personalSendTransaction(); 该方法与web3.sendTransaction相同 不在此写例子。
