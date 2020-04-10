@@ -31,6 +31,6 @@ web3 for java 样例程序 (基于web3 3.6.0)
 
 ### 2.智能合约
 
-![smartcontract](\hpb-web3-sample\doc\images\smartcontract.png)
+![smartcontract](https://github.com/peizihui/hpb-web3-sample/blob/master/doc/images/smartcontract.png)
 
 
