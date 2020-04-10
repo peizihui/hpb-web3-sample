@@ -23,8 +23,14 @@ web3 for java 样例程序 (基于web3 3.6.0)
 
 ---
 
-打赏 hpb地址:0xfdb1d6c47d94f75f35aefce77f7403c5d3f8c3cd
+# 示例图
 
+### 1.整体示例图；
 
+![](F:\PlanB\hpb-web3-sample\doc\images\web3-sample-outline.png)
+
+### 2.智能合约
+
+![smartcontract](F:\PlanB\hpb-web3-sample\doc\images\smartcontract.png)
 
 
