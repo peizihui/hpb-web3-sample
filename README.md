@@ -27,10 +27,10 @@ web3 for java 样例程序 (基于web3 3.6.0)
 
 ### 1.整体示例图；
 
-![](F:\PlanB\hpb-web3-sample\doc\images\web3-sample-outline.png)
+![](hpb-web3-sample\doc\images\web3-sample-outline.png)
 
 ### 2.智能合约
 
-![smartcontract](F:\PlanB\hpb-web3-sample\doc\images\smartcontract.png)
+![smartcontract](\hpb-web3-sample\doc\images\smartcontract.png)
 
 
