@@ -27,7 +27,7 @@ web3 for java 样例程序 (基于web3 3.6.0)
 
 ### 1.整体示例图；
 
-![](hpb-web3-sample\doc\images\web3-sample-outline.png)
+![web3-sample-outline](https://github.com/peizihui/hpb-web3-sample/blob/master/doc/images/web3-sample-outline.png)
 
 ### 2.智能合约
 
